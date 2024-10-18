@@ -12,6 +12,7 @@ class Map {
 
     private:
         int width, height;
+        double max_spiral, dt, amp;
 };
 
 #endif

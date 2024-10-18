@@ -5,6 +5,11 @@
 Map::Map(int w, int h) {
     width = w;
     height = h;
+
+    // Init. the draw loop variables
+    max_spiral = (double) height;
+    dt = 0.005; // Step: tf - ti
+    amp = 10.0;
 }
 
 /* Free memory */
@@ -18,7 +23,8 @@ void Map::draw_map(SDL_Renderer *renderer) {
     x_offset = (double) width / 2.0;
     y_offset = (double) height / 2.0;
 
-    for (t = 0.0; t < 100.0; t += 0.01)
+    for (t = 0.0; t < max_spiral; t += dt)
+        // Distribute the amp. , Apply offsets and Draw spiral
         SDL_RenderDrawPointF(renderer, 
-        x_offset + (t*cos(t)), y_offset + (t*sin(t)));
+        x_offset + amp*(t*cos(t)), y_offset + amp*(t*sin(t)));
 }
