@@ -12,7 +12,13 @@ class Map {
 
     private:
         int width, height;
-        double max_spiral, dt, amp;
+        double max_spiral, dt, amp, rotated,\
+        d_resize, d_rotate, min_resize, max_resize;
+        bool rotate, resize_dir;
+
+        void init_animation();
+
+        void put_next_frame_vars();
 };
 
 #endif
