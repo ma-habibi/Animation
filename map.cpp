@@ -1,13 +1,18 @@
 #include "map.h"
 #include <math.h>
 
-#include <iostream>
-
 /* Initialize map, Set width and height */
 Map::Map(int w, int h) {
     width = w;
     height = h;
+    init_animation();
+}
 
+/* Free memory */
+Map::~Map() {}
+
+/* Initialize animation variables */
+void Map::init_animation() {
     // Init. the draw loop variables
     max_spiral = (double) height/1000.0;
     dt = 0.005; // Step: tf - ti
@@ -15,10 +20,12 @@ Map::Map(int w, int h) {
     rotate = false;
     rotated = 0.0;
     resize_dir = false;
-}
+    d_resize = 1.0;
+    d_rotate = 0.005;
+    min_resize = (double)height / 1000.0;
+    max_resize = (double)height;
 
-/* Free memory */
-Map::~Map() {}
+}
 
 /* Updates rotated and max_spiral variables */
 void Map::put_next_frame_vars() {
@@ -27,17 +34,17 @@ void Map::put_next_frame_vars() {
         rotate = false;
 
     if (rotate) // Rotate
-        rotated += 0.005;
+        rotated += d_rotate;
     else {
         // Resize
-        max_spiral += (resize_dir)? 1.0: -1.0;
+        max_spiral += (resize_dir)? d_resize: -d_resize;
         // Set direction
-        if (max_spiral >= (double)height) {
+        if (max_spiral >= max_resize) {
             resize_dir = false;
             rotated = 0.0;
             rotate = true;
         }
-        if (max_spiral <= (double)height/1000.0) {
+        if (max_spiral <= min_resize) {
             resize_dir = true;
         }
 
