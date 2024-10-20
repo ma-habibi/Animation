@@ -8,7 +8,7 @@ find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 
 # Add executable target
-add_executable(${PROJECT_NAME} main.cpp game.cpp map.cpp)
+add_executable(${PROJECT_NAME} main.cpp game.cpp spiral_animation.cpp)
 
 # Link SDL2 and SDL2_image libraries
 target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES})
