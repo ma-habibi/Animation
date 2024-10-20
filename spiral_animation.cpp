@@ -1,20 +1,17 @@
-#include "map.h"
-#include <math.h>
+#include "spiral_animation.h"
+#include <SDL2/SDL.h>
 
 /* Initialize map, Set width and height */
-Map::Map(int w, int h) {
-    width = w;
-    height = h;
-    init_animation();
+Spiral_animation::Spiral_animation(int w, int h) {
+    width = (double) w;
+    height = (double) h;
+    init();
 }
 
-/* Free memory */
-Map::~Map() {}
-
 /* Initialize animation variables */
-void Map::init_animation() {
+void Spiral_animation::init() {
     // Init. the draw loop variables
-    max_spiral = (double) height/1000.0;
+    max_spiral = height/1000.0;
     dt = 0.005; // Step: tf - ti
     amp = 1.0;
     rotate = false;
@@ -22,13 +19,13 @@ void Map::init_animation() {
     resize_dir = false;
     d_resize = 1.0;
     d_rotate = 0.005;
-    min_resize = (double)height / 1000.0;
-    max_resize = (double)height;
+    min_resize = height / 1000.0;
+    max_resize = height;
 
 }
 
 /* Updates rotated and max_spiral variables */
-void Map::put_next_frame_vars() {
+void Spiral_animation::update() {
     // Stop rotation, start resize
     if (rotated >= 3.14159265)
         rotate = false;
@@ -52,14 +49,14 @@ void Map::put_next_frame_vars() {
 }
 
 /* Draw the spiral background */
-void Map::draw_map(SDL_Renderer *renderer) {
+void Spiral_animation::draw(SDL_Renderer *renderer) {
     double t, x_offset, y_offset;
 
     // Get the spiral in the middle
-    x_offset = (double) width / 2.0;
-    y_offset = (double) height / 2.0;
+    x_offset = width / 2.0;
+    y_offset = height / 2.0;
 
-    put_next_frame_vars();
+    update();
 
     for (t = 0.0; t < max_spiral; t += dt)
         // Distribute the amp. , Apply offsets and Draw spiral

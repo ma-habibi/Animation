@@ -35,8 +35,8 @@ void Game::init(const char *title, int xpos, int ypos,
 
   isRunning = true;
 
-  // Init map
-  map = new Map(width, height);
+  // Init spiral map
+  spiral = new Spiral_animation(width, height);
 }
 
 /* Listen for events */
@@ -66,7 +66,7 @@ void Game::render() {
   SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
 
   // Draw spiral background
-  map->draw_map(renderer);
+  spiral->draw(renderer);
 
   // Set renderer colors
   SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);

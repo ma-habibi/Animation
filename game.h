@@ -3,7 +3,7 @@
 
 #include <SDL2/SDL.h>
 
-#include "map.h"
+#include "spiral_animation.h"
 
 class Game {
   public:
@@ -31,7 +31,7 @@ class Game {
 
     SDL_Renderer *renderer;
 
-    Map *map;
+    Animation *spiral;
 };
 
 #endif /* GAME_H */
