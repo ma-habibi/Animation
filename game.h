@@ -3,7 +3,7 @@
 
 #include <SDL2/SDL.h>
 
-#include "spiral_animation.h"
+#include "animations/spiral_animation.h"
 
 class Game {
   public:
