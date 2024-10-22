@@ -1,9 +1,9 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <SDL2/SDL.h>
-
 #include "animations/spiral_animation.h"
+
+#include <SDL2/SDL.h>
 
 class Game {
   public:
@@ -25,7 +25,7 @@ class Game {
     void quit();
 
   private:
-    bool isRunning;
+    bool isrunning;
 
     SDL_Window *window;
 

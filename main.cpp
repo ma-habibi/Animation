@@ -20,6 +20,9 @@ int main() {
     framestart = SDL_GetTicks();
 
     game->handle_events();
+
+    game->update();
+
     game->render();
 
     // Obtain dt

@@ -1,9 +1,9 @@
-#include <iostream>
-#include <stdexcept>
+#include "game_object.h"
 
 #include <SDL2/SDL.h>
 
-#include "game.h"
+#include <iostream>
+#include <stdexcept>
 
 Game::Game()
 {}
@@ -33,7 +33,7 @@ void Game::init(const char *title, int xpos, int ypos,
   if (!renderer)
     throw std::runtime_error(SDL_GetError());
 
-  isRunning = true;
+  isrunning = true;
 
   // Init spiral map
   spiral = new Spiral_animation(width, height);
@@ -45,7 +45,7 @@ void Game::handle_events() {
   SDL_PollEvent(&event);
   switch (event.type) {
     case SDL_QUIT:
-      isRunning = false;
+      isrunning = false;
 
     default:
       break;
@@ -54,11 +54,11 @@ void Game::handle_events() {
 
 /* Update the game */
 void Game::update() {
+  return;
 }
 
 /* Render */
 void Game::render() {
-
   // Draw map using a new renderer
   SDL_RenderClear(renderer);
 
@@ -76,7 +76,7 @@ void Game::render() {
 
 /* If the Game is running */
 bool Game::is_running() {
-  return isRunning;
+  return isrunning;
 }
 
 /* Clean up */
