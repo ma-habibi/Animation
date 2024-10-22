@@ -5,15 +5,13 @@
 #include <iostream>
 #include <stdexcept>
 
-Game::Game()
-{}
-Game::~Game()
-{}
+Game::Game() {}
+Game::~Game() {}
 
 /* Initialize the game and SDL subsytems */
-void Game::init(const char *title, int xpos, int ypos,
-        int width, int height, bool full_screen) {
-  int flag; 
+void Game::init(const char *title, int xpos, int ypos, int width, int height,
+                bool full_screen) {
+  int flag;
 
   // Init subsytems
   if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
@@ -21,10 +19,8 @@ void Game::init(const char *title, int xpos, int ypos,
   std::cout << "Subsytems Initialized." << std::endl;
 
   // Create window
-  flag = (full_screen)? SDL_WINDOW_FULLSCREEN: SDL_WINDOW_SHOWN;
-  window = SDL_CreateWindow(title,
-      xpos, ypos,
-      width, height, flag);
+  flag = (full_screen) ? SDL_WINDOW_FULLSCREEN : SDL_WINDOW_SHOWN;
+  window = SDL_CreateWindow(title, xpos, ypos, width, height, flag);
   if (!window)
     throw std::runtime_error(SDL_GetError());
 
@@ -44,18 +40,16 @@ void Game::handle_events() {
   SDL_Event event;
   SDL_PollEvent(&event);
   switch (event.type) {
-    case SDL_QUIT:
-      isrunning = false;
+  case SDL_QUIT:
+    isrunning = false;
 
-    default:
-      break;
+  default:
+    break;
   }
 }
 
 /* Update the game */
-void Game::update() {
-  return;
-}
+void Game::update() { return; }
 
 /* Render */
 void Game::render() {
@@ -75,9 +69,7 @@ void Game::render() {
 }
 
 /* If the Game is running */
-bool Game::is_running() {
-  return isrunning;
-}
+bool Game::is_running() { return isrunning; }
 
 /* Clean up */
 void Game::quit() {

@@ -11,9 +11,8 @@ int main() {
   uint32_t framestart;
   int frametime;
 
-  game->init("Spiral",
-      SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-      800, 600, false);
+  game->init("Spiral", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800,
+             600, false);
 
   while (game->is_running()) {
     // Get current timing in ms
@@ -32,7 +31,6 @@ int main() {
     if (framedelay > frametime) {
       SDL_Delay(framedelay - frametime);
     }
-
   }
 
   game->quit();

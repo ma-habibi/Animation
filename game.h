@@ -6,32 +6,32 @@
 #include <SDL2/SDL.h>
 
 class Game {
-  public:
-    Game();
+public:
+  Game();
 
-    ~Game();
+  ~Game();
 
-    void init(const char *title, int xpos, int ypos, 
-        int width, int height, bool full_screen);
+  void init(const char *title, int xpos, int ypos, int width, int height,
+            bool full_screen);
 
-    void handle_events();
+  void handle_events();
 
-    void update();
+  void update();
 
-    void render();
+  void render();
 
-    bool is_running();
+  bool is_running();
 
-    void quit();
+  void quit();
 
-  private:
-    bool isrunning;
+private:
+  bool isrunning;
 
-    SDL_Window *window;
+  SDL_Window *window;
 
-    SDL_Renderer *renderer;
+  SDL_Renderer *renderer;
 
-    Animation *spiral;
+  Animation *spiral;
 };
 
 #endif /* GAME_H */

@@ -4,19 +4,18 @@
 #include "animation.h"
 #include <SDL2/SDL.h>
 
-class Sin_animation: public Animation {
-    public:
-        Sin_animation(int w, int h);
+class Sin_animation : public Animation {
+public:
+  Sin_animation(int w, int h);
 
-        void draw(SDL_Renderer *renderer);
+  void draw(SDL_Renderer *renderer);
 
-        void init();
+  void init();
 
-        void update();
-    
-    private:
-        double freq, amp, dt, d_freq;
+  void update();
 
+private:
+  double freq, amp, dt, d_freq;
 };
 
 #endif // SIN_H
