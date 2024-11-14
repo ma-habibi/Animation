@@ -1,21 +1,22 @@
-# SPIRAL
+# Animation
 
-## MacOs
+## Build
+  - Install [vcpkg](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started?pivots=shell-bash)
 
-Install SDL:
+  - set cmake:
 
-```sh
-brew install sdl2
-```
+    ```sh
+    cmake --preset=default
+    ```
 
-Build:
+  - build:
+    
+    ```sh
+    cmake --build build
+    ```
 
-```sh
-cmake -S . -B build
-```
-
-Run:
-
-```sh
-make -C build && ./build/spiral
-```
+  - run:
+    
+    ```sh
+    ./build/animation
+    ```
