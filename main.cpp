@@ -11,7 +11,7 @@ int main() {
   uint32_t framestart;
   int frametime;
 
-  game->init("Spiral", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800,
+  game->init("Lightning", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800,
              600, false);
 
   while (game->is_running()) {

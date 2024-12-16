@@ -31,8 +31,8 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height,
 
   isrunning = true;
 
-  // Init spiral map
-  spiral = new Spiral_animation(width, height);
+  // Init lightning map
+  lightning = new Lightning_animation(width, height);
 }
 
 /* Listen for events */
@@ -59,8 +59,8 @@ void Game::render() {
   // Set renderer colors
   SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
 
-  // Draw spiral background
-  spiral->draw(renderer);
+  // Draw lightning background
+  lightning->draw(renderer);
 
   // Set renderer colors
   SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);

@@ -1,7 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "animations/spiral_animation.h"
+#include "animations/lightning_animation.h"
 
 #include <SDL2/SDL.h>
 
@@ -31,7 +31,7 @@ private:
 
   SDL_Renderer *renderer;
 
-  Animation *spiral;
+  Animation *lightning;
 };
 
 #endif /* GAME_H */
