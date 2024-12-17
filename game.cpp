@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <cstring>
 
 Game::Game() {}
 Game::~Game() {}
@@ -31,8 +32,13 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height,
 
   isrunning = true;
 
-  // Init lightning map
-  lightning = new Lightning_animation(width, height);
+  // Init animation
+  if (!strcmp(title,"Lightning"))
+      animation = new Lightning_animation(width, height);
+  if (!strcmp(title,"Spiral"))
+      animation = new Spiral_animation(width, height);
+  if (!strcmp(title,"Sin"))
+      animation = new Sin_animation(width, height);
 }
 
 /* Listen for events */
@@ -59,8 +65,8 @@ void Game::render() {
   // Set renderer colors
   SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
 
-  // Draw lightning background
-  lightning->draw(renderer);
+  // Draw animation background
+  animation->draw(renderer);
 
   // Set renderer colors
   SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
