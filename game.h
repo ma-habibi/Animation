@@ -1,9 +1,9 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "animations/lightning_animation.h"
 #include "animations/sin_animation.h"
 #include "animations/spiral_animation.h"
+#include "animations/lightning_animation.h"
 
 #include <SDL2/SDL.h>
 

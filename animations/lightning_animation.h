@@ -8,11 +8,11 @@ class Lightning_animation : public Animation {
 public:
   Lightning_animation(int w, int h);
 
-  void draw(SDL_Renderer *renderer);
+  void draw(SDL_Renderer *renderer) {};
 
-  void init();
+  void init() {}
 
-  void update();
+  void update() {}
 };
 
 #endif // LIGHTNING_H
