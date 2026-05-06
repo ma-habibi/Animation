@@ -11,8 +11,8 @@ int main() {
   uint32_t framestart;
   int frametime;
 
-  game->init("Lightning", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800,
-             600, false);
+  game->init("Road", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1280,
+             800, false);
 
   while (game->is_running()) {
     // Get current timing in ms
