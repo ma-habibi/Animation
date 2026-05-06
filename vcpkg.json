@@ -2,6 +2,7 @@
   "dependencies": [
     "sdl2",
     "sdl2-image",
-    "sdl2-gfx"
+    "sdl2-gfx",
+    "argparse"
   ]
 }
