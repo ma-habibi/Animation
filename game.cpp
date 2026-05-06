@@ -37,9 +37,10 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height,
       animation = new Lightning_animation(width, height);
   if (!strcmp(title,"Spiral"))
       animation = new Spiral_animation(width, height);
-  if (!strcmp(title,"Sin")) {
+  if (!strcmp(title,"Sin"))
       animation = new Sin_animation(width, height);
-  }
+  if (!strcmp(title,"Road"))
+      animation = new Road_animation(width, height);
 }
 
 /* Listen for events */
