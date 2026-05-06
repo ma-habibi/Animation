@@ -16,12 +16,8 @@
     ```sh
     cmake --build build
     ```
-
-  - run:
-    
-    ```sh
-    ./build/animation
-    ```
+  
+This will create the executable at `./build/animation`.
 
 ## Usage
 ### Examples:
