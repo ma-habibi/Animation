@@ -2,9 +2,9 @@
 
 #include <SDL2/SDL.h>
 
+#include <cstring>
 #include <iostream>
 #include <stdexcept>
-#include <cstring>
 
 Game::Game() {}
 Game::~Game() {}
@@ -33,14 +33,14 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height,
   isrunning = true;
 
   // Init animation
-  if (!strcmp(title,"Lightning"))
-      animation = new Lightning_animation(width, height);
-  if (!strcmp(title,"Spiral"))
-      animation = new Spiral_animation(width, height);
-  if (!strcmp(title,"Sin"))
-      animation = new Sin_animation(width, height);
-  if (!strcmp(title,"Road"))
-      animation = new Road_animation(width, height);
+  if (!strcmp(title, "Lightning"))
+    animation = new Lightning_animation(width, height);
+  if (!strcmp(title, "Spiral"))
+    animation = new Spiral_animation(width, height);
+  if (!strcmp(title, "Sin"))
+    animation = new Sin_animation(width, height);
+  if (!strcmp(title, "Road"))
+    animation = new Road_animation(width, height);
 }
 
 /* Listen for events */

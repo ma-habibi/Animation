@@ -6,7 +6,6 @@
 #include "animation.h"
 #include <SDL2/SDL.h>
 
-
 class Road_animation : public Animation {
 public:
   Road_animation(int w, int h);
@@ -19,8 +18,7 @@ public:
 
 private:
   int first_line_y_pos, number_of_lines;
-  std::vector<SDL_Point> vect_horizontal_points {};
+  std::vector<SDL_Point> vect_horizontal_points{};
 };
 
-
-#endif //ROAD_H
+#endif // ROAD_H
