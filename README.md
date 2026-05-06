@@ -22,3 +22,28 @@
     ```sh
     ./build/animation
     ```
+
+## Usage
+### Examples:
+
+Running road animation.
+```shell
+./build/animation -a road
+```
+    
+### The `--help`:
+
+```text
+Usage: animation [--help] [--version] --animation VAR
+
+Optional arguments:
+-h, --help       shows help message and exits
+-v, --version    prints version information and exits
+-a, --animation  The animation to display. [required]
+```
+
+## CLI arguments
+
+| name            | brief                                                          | required |
+|-----------------|----------------------------------------------------------------|----------|
+| -a, --animation | The animation to display. Allowed options: [sin, road, spiral] | true     |
