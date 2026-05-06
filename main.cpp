@@ -1,8 +1,27 @@
+#include <iostream>
+
+#include <argparse/argparse.hpp>
+
 #include "game.h"
 
 Game *game = nullptr;
 
-int main() {
+int main(int argc, char *argv[]) {
+  argparse::ArgumentParser program("animation");
+  program.add_argument("-a", "--animation")
+    .choices("sin", "road", "spiral")
+    .help("The animation to display.")
+    .required();
+  try {
+    program.parse_args(argc, argv);
+  }
+  catch (const std::exception& err) {
+    std::cerr << err.what() << std::endl;
+    std::cerr << program;
+    return 1;
+  }
+  auto animation_name = program.get<std::string>("animation");
+
   game = new Game();
 
   // Set up fps
@@ -11,7 +30,7 @@ int main() {
   uint32_t framestart;
   int frametime;
 
-  game->init("Road", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1280,
+  game->init(animation_name.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1280,
              800, false);
 
   while (game->is_running()) {
