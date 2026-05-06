@@ -33,13 +33,13 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height,
   isrunning = true;
 
   // Init animation
-  if (!strcmp(title, "Lightning"))
+  if (!strcmp(title, "lightning"))
     animation = new Lightning_animation(width, height);
-  if (!strcmp(title, "Spiral"))
+  if (!strcmp(title, "spiral"))
     animation = new Spiral_animation(width, height);
-  if (!strcmp(title, "Sin"))
+  if (!strcmp(title, "sin"))
     animation = new Sin_animation(width, height);
-  if (!strcmp(title, "Road"))
+  if (!strcmp(title, "road"))
     animation = new Road_animation(width, height);
 }
 
