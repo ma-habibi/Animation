@@ -9,13 +9,12 @@ Game *game = nullptr;
 int main(int argc, char *argv[]) {
   argparse::ArgumentParser program("animation");
   program.add_argument("-a", "--animation")
-    .choices("sin", "road", "spiral")
-    .help("The animation to display.")
-    .required();
+      .choices("sin", "road", "spiral")
+      .help("The animation to display.")
+      .required();
   try {
     program.parse_args(argc, argv);
-  }
-  catch (const std::exception& err) {
+  } catch (const std::exception &err) {
     std::cerr << err.what() << std::endl;
     std::cerr << program;
     return 1;
@@ -30,8 +29,8 @@ int main(int argc, char *argv[]) {
   uint32_t framestart;
   int frametime;
 
-  game->init(animation_name.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1280,
-             800, false);
+  game->init(animation_name.c_str(), SDL_WINDOWPOS_UNDEFINED,
+             SDL_WINDOWPOS_UNDEFINED, 1280, 800, false);
 
   while (game->is_running()) {
     // Get current timing in ms
