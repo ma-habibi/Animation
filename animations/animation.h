@@ -10,6 +10,9 @@ protected:
     float x, y, z;
   } Vec3;
 
+  /* Translate a source vector by a given translation vector */
+  static Vec3 vec3_translate(Vec3, Vec3);
+
 public:
   virtual ~Animation() {};
 
