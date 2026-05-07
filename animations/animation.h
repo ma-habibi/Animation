@@ -13,6 +13,9 @@ protected:
   /* Translate a source vector by a given translation vector */
   static Vec3 vec3_translate(Vec3, Vec3);
 
+  /* Rotate a source vector by a given rotation vector along the X and Z axis */
+  static Vec3 vec3_rotate_xz(Vec3, float);
+
 public:
   virtual ~Animation() {};
 
