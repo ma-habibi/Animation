@@ -4,6 +4,12 @@
 #include <SDL2/SDL.h>
 
 class Animation {
+protected:
+  /* 3D vector. */
+  typedef struct {
+    float x, y, z;
+  } Vec3;
+
 public:
   virtual ~Animation() {};
 
