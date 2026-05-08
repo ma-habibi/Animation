@@ -43,3 +43,11 @@ Optional arguments:
 | name            | brief                                                                | required |
 |-----------------|----------------------------------------------------------------------|----------|
 | -a, --animation | The animation to display. Allowed options: [sin, road, spiral, cube] | true     |
+
+
+## Contribution guidelines
+
+- Find an issue you'd wish to work on and assign it to yourself.
+- Design you're solution and write a [tech spec](https://github.com/ma-habibi/Animation/issues/3#issuecomment-4409562240).
+- Once the tech spec is approved, create a branch for the issue.
+- Push your changes and submit a pull request.
