@@ -41,6 +41,8 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height,
     animation = new Sin_animation(width, height);
   if (!strcmp(title, "road"))
     animation = new Road_animation(width, height);
+  if (!strcmp(title, "cube"))
+    animation = new Cube_animation(width, height);
 }
 
 /* Listen for events */

@@ -40,6 +40,6 @@ Optional arguments:
 
 ## CLI arguments
 
-| name            | brief                                                          | required |
-|-----------------|----------------------------------------------------------------|----------|
-| -a, --animation | The animation to display. Allowed options: [sin, road, spiral] | true     |
+| name            | brief                                                                | required |
+|-----------------|----------------------------------------------------------------------|----------|
+| -a, --animation | The animation to display. Allowed options: [sin, road, spiral, cube] | true     |

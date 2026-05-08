@@ -9,7 +9,7 @@ Game *game = nullptr;
 int main(int argc, char *argv[]) {
   argparse::ArgumentParser program("animation");
   program.add_argument("-a", "--animation")
-      .choices("sin", "road", "spiral")
+      .choices("sin", "road", "spiral", "cube")
       .help("The animation to display.")
       .required();
   try {
@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
   int frametime;
 
   game->init(animation_name.c_str(), SDL_WINDOWPOS_UNDEFINED,
-             SDL_WINDOWPOS_UNDEFINED, 1280, 800, false);
+             SDL_WINDOWPOS_UNDEFINED, 800, 600, false);
 
   while (game->is_running()) {
     // Get current timing in ms

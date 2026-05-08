@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include "animations/cube_animation.h"
 #include "animations/lightning_animation.h"
 #include "animations/road_animation.h"
 #include "animations/sin_animation.h"
