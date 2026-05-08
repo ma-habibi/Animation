@@ -13,6 +13,7 @@ find_package(argparse CONFIG REQUIRED)
 add_executable(${PROJECT_NAME}
         main.cpp
         game.cpp
+        animations/animation.cpp
         animations/lightning_animation.cpp
         animations/sin_animation.cpp
         animations/spiral_animation.cpp
